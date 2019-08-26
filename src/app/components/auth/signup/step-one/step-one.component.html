@@ -1,0 +1,62 @@
+<div style="background-image: url(./assets/images/login-bg.jpg);">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-8">
+        <div>
+          <div>
+            <h3>New Customer Registration</h3>
+            <h6>Step 1 - Policy information for registration</h6>
+            <hr />
+
+            <form (submit)="submitForm()" [formGroup]="stepOneForm">
+              <div class="form-group col-form-label row">
+                <label class="col-sm-3">First Name</label>
+                <div class="col-sm-9">
+                  <input class="form-control form-control-sm" type="text" formControlName="first_name" />
+                </div>
+              </div>
+              <div class="form-group col-form-label row">
+                <label class="col-sm-3">Last Name</label>
+                <div class="col-sm-9">
+                  <input class="form-control form-control-sm" type="text" formControlName="last_name" />
+                </div>
+              </div>
+              <div class="form-group col-form-label row">
+                <label class="col-sm-3">Date Of Birth</label>
+                <div class="col-sm-9">
+                  <input class="form-control form-control-sm" type="text" formControlName="date_of_birth" />
+                </div>
+              </div>
+              <div class="form-group col-form-label row">
+                <label class="col-sm-3">Zip Code</label>
+                <div class="col-sm-9">
+                  <input class="form-control form-control-sm" type="text" formControlName="zip_code" />
+                </div>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-center align-items-center">
+                <label class="kt-checkbox" style="font-weight: normal;">
+                  <input type="checkbox" name="remember" (change)="termsChanged($event.target.checked)" />
+                  I AGREE TO THE TERMS AND CONDITIONS
+                  <span></span>
+                </label>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-end">
+                <button
+                  class="btn btn-primary"
+                  style="width: 200px;"
+                  [ngClass]="{ disabled: !termsAgreed }"
+                  [disabled]="!termsAgreed"
+                  type="submit"
+                >
+                  Continue
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container-fluid d-flex flex-column" style="height: 100vh;">
+  <div class="row">
+    <header
+      class="d-flex w-100 justify-content-between align-items-center"
+      style="background-color: rgb(79, 129, 189);"
+    >
+      <h1 class="ml-5">Logo</h1>
+      <div class="mr-5">
+        <strong>{{ user?.first_name }} {{ user?.last_name }}</strong>
+      </div>
+    </header>
+  </div>
+
+  <div class="row mt-3 h-100">
+    <div class="col-2 h-100">
+      <app-accordion [options]="options" [menus]="menus"></app-accordion>
+    </div>
+    <div class="col-10"></div>
+  </div>
+
+  <div class="row mt-auto">
+    <footer class="w-100" style="background-color: rgb(79, 129, 189);">footer</footer>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div style="background-image: url(./assets/images/login-bg.jpg);">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-6">
+        <div>
+          <h3 class="text-center mb-5">Logotype</h3>
+
+          <div>
+            <form (submit)="login()">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Username"
+                  name="username"
+                  autocomplete="off"
+                  [(ngModel)]="username"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  [(ngModel)]="password"
+                />
+              </div>
+
+              <div class="row login-extra">
+                <div class="col">
+                  <label class="kt-checkbox" style="font-weight: normal;">
+                    <input type="checkbox" name="remember" />Remember me
+                    <span></span>
+                  </label>
+                </div>
+                <!-- <div class="col text-right">
+                  <a href="#" class="login-link">Forget Password?</a>
+                </div> -->
+              </div>
+
+              <div class="d-flex justify-content-center mb-2">
+                <button class="btn btn-brand btn-elevate" type="submit">
+                  Sign In
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

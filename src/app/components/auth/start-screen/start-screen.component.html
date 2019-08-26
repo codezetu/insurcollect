@@ -1,0 +1,20 @@
+<div style="background-image: url(./assets/images/login-bg.jpg);">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-6">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+          <a [routerLink]="['/login']" class="btn btn-primary" style="width: 300px;">
+            Login
+          </a>
+
+          <div class="my-3">
+            <span>New User? Click</span>&nbsp;<a [routerLink]="['/signup']">here</a>&nbsp;<span>to Register</span>
+          </div>
+          <a [routerLink]="['/without-registration']" class="btn btn-primary" style="width: 300px;">
+            Pay without registration
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

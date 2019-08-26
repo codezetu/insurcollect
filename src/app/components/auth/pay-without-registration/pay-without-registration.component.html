@@ -1,0 +1,36 @@
+<div style="background-image: url(./assets/images/login-bg.jpg);">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-6">
+        <div>
+          <h3 class="text-center mb-5">Logotype</h3>
+
+          <div>
+            <form (submit)="submitForm()">
+              <div class="form-group">
+                <label>Policy or Billing Account #</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Policy or Billing Account #"
+                  name="billing_account_number"
+                  [(ngModel)]="billingAccountNumber"
+                />
+              </div>
+              <div class="form-group">
+                <label>Zipcode</label>
+                <input class="form-control" type="text" placeholder="Zipcode" name="zip_code" [(ngModel)]="zipCode" />
+              </div>
+
+              <div class="mb-2">
+                <button class="btn btn-primary w-100" type="submit">
+                  Continue
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
