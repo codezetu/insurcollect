@@ -5,12 +5,12 @@ import { tap, catchError, map } from 'rxjs/internal/operators';
 import { environment } from 'src/environments/environment';
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { User } from 'models/auth.model';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private ls = localStorage;
   private baseUrl = `${environment.apiUrl}/auth`;
   private token: string = null;
   private authenticated = new BehaviorSubject(false);
@@ -35,7 +35,7 @@ export class AuthService {
     }
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private ls: LocalStorageService) {}
 
   public isAuthenticated() {
     return this.authenticated.asObservable();
@@ -70,6 +70,7 @@ export class AuthService {
       catchError((error: HttpErrorResponse) => {
         this.accessToken = null;
         this.authenticated.next(false);
+        this.user = null;
         return throwError(error);
       }),
     );
@@ -78,6 +79,7 @@ export class AuthService {
   public logout() {
     return this.http.post(`${this.baseUrl}/logout/`, null).pipe(
       tap(() => {
+        this.user = null;
         this.accessToken = null;
         this.authenticated.next(false);
       }),
