@@ -19,10 +19,12 @@ export class SidebarLargeComponent implements OnInit {
       name: 'My Account',
       type: 'dropDown',
       icon: 'i-ID-Card',
+      state: '/account',
       sub: [
-        { name: 'View or Pay Open Invoices', state: '/account', type: 'link' },
-        { name: 'Schedule Payments', state: '/account', type: 'link' },
-        { name: 'View Schedule Payments', state: '/account', type: 'link' },
+        { name: 'View or Pay Open Invoices', state: '/account/opened-invoices', type: 'link' },
+        { name: 'View Paid or Closed Invoices', state: '/account/closed-invoices', type: 'link' },
+        { name: 'Schedule Payments', state: '/account/schedule-payments', type: 'link' },
+        { name: 'View Schedule Payments', state: '/account/view-payments', type: 'link' },
       ],
     },
     {
