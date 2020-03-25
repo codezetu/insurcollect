@@ -3,8 +3,10 @@
   class="sidebar-left rtl-ps-none"
   [perfectScrollbar]="{ suppressScrollX: true }"
 >
-  <div class="logo">
-    <img src="./assets/images/logo.png" alt="" />
+  <div class="logos" style="padding: 20px 0 0 40px; font-size: 22px">
+    <!-- <img src="./assets/images/logo.png" alt="" /> -->
+     insurCOLLECT  <br/>
+     <h6 style="padding: 5px 0 0 80px; color: white;">By ivenger</h6>
   </div>
   <ul class="navigation-left">
     <li
@@ -45,10 +47,10 @@
   class="sidebar-left-secondary rtl-ps-none"
   [perfectScrollbar]="{ suppressScrollX: true }"
 >
-  <header>
+  <!-- <header>
     <h6>Apps</h6>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-  </header>
+  </header> -->
   <ng-container *ngTemplateOutlet="menuTemplate; context: { parentItem: selectedItem }"></ng-container>
 </div>
 

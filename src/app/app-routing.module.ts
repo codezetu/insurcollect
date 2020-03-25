@@ -4,6 +4,7 @@ import { AuthLayoutComponent } from './shared/components/layouts/auth-layout/aut
 import { AuthGuard } from './guards/auth.guard';
 import { BlankLayoutComponent } from './shared/components/layouts/blank-layout/blank-layout.component';
 import { AdminLayoutSidebarLargeComponent } from './shared/components/layouts/admin-layout-sidebar-large/admin-layout-sidebar-large.component';
+import { DashboardComponent } from 'shared/components/layouts/admin-layout-sidebar-large/dashboard/dashboard.component';
 
 const adminRoutes: Routes = [
   {
@@ -75,10 +76,23 @@ const routes: Routes = [
     ],
   },
   {
-    path: '',
+    path: 'home',
     component: AdminLayoutSidebarLargeComponent,
-    canActivate: [AuthGuard],
-    children: adminRoutes,
+    // canActivate: [AuthGuard],
+    // children: adminRoutes,
+    children: [
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+      },
+      {
+         path: '', component: DashboardComponent 
+      },
+      { path: 'dashboard',
+        component: DashboardComponent 
+      },
+    ],
   },
   {
     path: '**',

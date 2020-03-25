@@ -16,7 +16,7 @@ export class SidebarLargeComponent implements OnInit {
 
   public nav: IMenuItem[] = [
     {
-      name: 'My Account',
+      name: 'Account',
       type: 'dropDown',
       icon: 'i-ID-Card',
       state: '/account',
@@ -28,9 +28,9 @@ export class SidebarLargeComponent implements OnInit {
       ],
     },
     {
-      name: 'My Profile',
+      name: 'Settings',
       type: 'dropDown',
-      icon: 'i-Library',
+      icon: 'i-ID-Card',
       sub: [
         { name: 'My Bank Account', state: '/uikits/alerts', type: 'link' },
         { name: 'My Credit Cards', state: '/uikits/accordions', type: 'link' },
@@ -41,9 +41,9 @@ export class SidebarLargeComponent implements OnInit {
       ],
     },
     {
-      name: 'Logout',
+      name: 'Log out',
       type: 'action',
-      icon: 'i-Arrow-Back-2',
+      icon: 'i-ID-Card',
       action: (e: Event) => this.logout(e),
     },
   ];

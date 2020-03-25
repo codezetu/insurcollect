@@ -15,6 +15,8 @@ import { SearchModule } from '../search/search.module';
 import { SidebarLargeComponent } from './admin-layout-sidebar-large/sidebar-large/sidebar-large.component';
 import { FooterComponent } from '../footer/footer.component';
 import { SharedDirectivesModule } from '../../directives/shared-directives.module';
+import { DashboardComponent } from './admin-layout-sidebar-large/dashboard/dashboard.component';
+import { IconsModule } from 'src/app/icons/icons.module';
 
 const components = [
   HeaderSidebarLargeComponent,
@@ -23,6 +25,7 @@ const components = [
   AdminLayoutSidebarLargeComponent,
   AuthLayoutComponent,
   BlankLayoutComponent,
+  DashboardComponent,
 ];
 
 @NgModule({
@@ -35,8 +38,9 @@ const components = [
     SharedDirectivesModule,
     PerfectScrollbarModule,
     CommonModule,
+    IconsModule
   ],
   declarations: components,
-  exports: components,
+  exports: [ components, IconsModule ] 
 })
 export class LayoutsModule {}

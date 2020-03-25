@@ -7,7 +7,7 @@
 .main-content-wrap {
     width: 100%;
     float: right;
-    margin-top: $topbar-height;
+    // margin-top: $topbar-height;
     transition: all .24s ease-in-out;
     padding: 2rem  2rem 0;
     position: relative;
@@ -25,25 +25,38 @@
     .sidebar-left {
         position: fixed;
         top: $topbar-height;
-        height: calc(100vh - #{$topbar-height});
-        background: $background;
-        box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
+        height: 100%;
+        background: #163247;
+        color: white;
+        // width: 20px;
+        // box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08); calc(100vh - #{$topbar-height})
     }
+
+    li:nth-child(2) {
+        //  padding-top: 390px;
+    }
+
+    .nav-item:nth-child(1) {
+        // padding-top: 35px;
+    }
+
 
     .sidebar-left {
         left: calc(-#{$sidebar-left-width} - #{$side-clearance});
         z-index: 90;
         transition: all .24s ease-in-out;
         &.open {
-            left: 0
+            left: 0;
+            top: 0;
+            width: 250px;
         }
         .logo {
             display: none;
         }
         .navigation-left {
             list-style: none;
-            text-align: center;
-            width: $sidebar-left-width;
+            // text-align: center;
+            // width: $sidebar-left-width;
             height: 100%;
             margin: 0;
             padding: 0;
@@ -53,33 +66,39 @@
                 width: 100%;
                 color: $heading;
                 cursor: pointer;
-                border-bottom: 1px solid $gray-300;
+                // border-bottom: 1px solid $gray-300;
                 &:focus, &:active {
                     outline: none;
                 }
                 &.lvl1 {
-                    text-align: center;
+                    // text-align: center;
+                    width: 300px;
+
                 }
                 &.active {
                     color: $primary;
                 }
                 .nav-item-hold {
                     width: 100%;
-                    padding: 26px 0;
+                    padding: 6px 0;
                     &:focus, &:active {
                         outline: none;
+                        // background-color: blue;
+
                     }
                     .nav-icon, .feather {
-                        font-size: 32px;
-                        height: 32px;
-                        width: 32px;
-                        display: block;
-                        margin: 0 auto 6px;
+                        // font-size: 32px;
+                        height: 27px;
+                        width: 27px;
+                        // display: block;
+                        padding: 10px  20px;
+                        color: white;
                     }
                     .nav-text {
-                        font-size: 13px;
-                        display: block;
-                        font-weight: 400;
+                        font-size: 16px;
+                        // display: block;
+                        font-weight: 100;
+                        color: white;
                     }
                     a {
                         color: $heading;
@@ -91,8 +110,9 @@
                     height: 0;
                     right: 0;
                     bottom: 0;
-                    border-style: solid;
-                    border-width: 0 0 30px 30px;
+                    color: white;
+                    // border-style: solid;
+                    // border-width: 0 0 30px 30px;
                     border-color: transparent transparent $primary transparent;
                 }
             }
@@ -104,15 +124,16 @@
         left: calc(-#{$sidebar-left-secondary-width} - #{$side-clearance});
         z-index: 89;
         width: $sidebar-left-secondary-width;
-        padding: .75rem 0;
+        padding: 1.75rem 0;
         transition: all .24s ease-in-out;
         background: $background;
         &.open {
-            left: $sidebar-left-width;
+            // left: $sidebar-left-width;
+            left: 256px;
         }
-        header {
-            display: none;
-        }
+        // header {
+        //     display: none;
+        // }
         .childNav {
             list-style: none;
             padding: 0;
@@ -127,13 +148,15 @@
                     align-items: center;
                     font-size: 13px;
                     cursor: pointer;
-                    padding: 12px 24px;
+                    padding: 12px 4px;
                     transition: .15s all ease-in;
                     &:hover {
-                        background: $gray-200;
+                        // background: $gray-200;
+                        background-color: #ddd;
                     }
                     &.open {
                         color: $primary;
+                        width: 250px;
                     }
                     .nav-icon {
                         font-size: 18px;
@@ -164,11 +187,14 @@
                     > a {
                         > .dd-arrow {
                             transform: rotate(90deg);
+                            width: 240px;
+
                         }
                     }
                     > .childNav {
-                        max-height: 1000px;
-                        overflow: visible;
+                        width: 240px;
+                        // max-height: 1000px;
+                        // overflow: visible;
                     }
                 }
             }
@@ -186,6 +212,7 @@
                     transition: all .4s ease-in-out;
                     li.nav-item a {
                         padding: 12px 12px 12px 50px;
+
                     }
                 }
             }
@@ -243,7 +270,7 @@
     .sidebar-left {
         left: calc(-#{$sidebar-left-width-mobile} - #{$side-clearance});
         .navigation-left {
-            width: $sidebar-left-width-mobile;
+            // width: $sidebar-left-width-mobile;
             .nav-item {
                 &.active {
                     .triangle {
@@ -277,6 +304,7 @@
             &.open {
                 left: auto !important;
                 right: 0;
+                width: 250px;
             }
             .navigation-left .nav-item .triangle {
                 transform: rotate(90deg);

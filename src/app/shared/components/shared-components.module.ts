@@ -12,7 +12,7 @@ import { LayoutsModule } from './layouts/layouts.module';
 
 const components = [
   BtnLoadingComponent,
-  FeatherIconComponent,
+  FeatherIconComponent
 ];
 
 @NgModule({
@@ -27,6 +27,6 @@ const components = [
     NgbModule
   ],
   declarations: components,
-  exports: components
+  exports: [ components ] 
 })
 export class SharedComponentsModule { }
