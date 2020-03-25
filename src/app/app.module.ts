@@ -9,10 +9,12 @@ import { SharedModule } from './shared/shared.module';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from 'services/auth.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { AccountModule } from './views/account/account.module';
+
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, SharedModule, HttpClientModule, BrowserAnimationsModule, AppRoutingModule],
+  imports: [BrowserModule, SharedModule, HttpClientModule, BrowserAnimationsModule, AppRoutingModule, AccountModule],
   providers: [AuthGuard, AuthService, { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })

@@ -14,8 +14,9 @@
     min-height: calc(100vh - #{$topbar-height});
     background: $white;
     &.sidenav-open {
-        width: calc(100% - #{$sidebar-left-width});
+        width: calc(100% - 230px);
     }
+    // #{$sidebar-left-width}
 }
 
 //SIDEBAR =======
@@ -59,7 +60,7 @@
             // width: $sidebar-left-width;
             height: 100%;
             margin: 0;
-            padding: 0;
+            padding: 34px 0;
             .nav-item {
                 position: relative;
                 display: block;
@@ -278,7 +279,7 @@
                     }
                 }
                 .nav-item-hold {
-                    padding: 16px 0;
+                    padding: 46px 0;
                 }
             }
         }

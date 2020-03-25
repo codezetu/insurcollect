@@ -5,6 +5,10 @@ import { AuthGuard } from './guards/auth.guard';
 import { BlankLayoutComponent } from './shared/components/layouts/blank-layout/blank-layout.component';
 import { AdminLayoutSidebarLargeComponent } from './shared/components/layouts/admin-layout-sidebar-large/admin-layout-sidebar-large.component';
 import { DashboardComponent } from 'shared/components/layouts/admin-layout-sidebar-large/dashboard/dashboard.component';
+import { AccountOpenedInvoicesComponent } from './views/account/account-opened-invoices/account-opened-invoices.component';
+import { AccountClosedInvoicesComponent } from './views/account/account-closed-invoices/account-closed-invoices.component';
+import { SchedulePaymentsComponent } from './views/account/schedule-payments/schedule-payments.component';
+import { ViewPaymentsComponent } from './views/account/view-payments/view-payments.component';
 
 const adminRoutes: Routes = [
   {
@@ -76,21 +80,30 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'home',
+    path: 'account',
     component: AdminLayoutSidebarLargeComponent,
     // canActivate: [AuthGuard],
     // children: adminRoutes,
     children: [
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'account',
         pathMatch: 'full',
       },
       {
          path: '', component: DashboardComponent 
       },
-      { path: 'dashboard',
-        component: DashboardComponent 
+      { path: 'opened-invoices',
+        component: AccountOpenedInvoicesComponent
+      },
+      { path: 'closed-invoices',
+        component: AccountClosedInvoicesComponent 
+      },
+      { path: 'schedule-payments',
+        component: SchedulePaymentsComponent 
+      },
+      { path: 'view-payments',
+        component: ViewPaymentsComponent 
       },
     ],
   },
